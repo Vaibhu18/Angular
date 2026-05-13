@@ -1,0 +1,19 @@
+<p>home works!</p>
+
+<!-- <a [routerLink]="['/profile', { name: 'Vaibhav Shinde', email: 'vcode@gmail.com' }]"
+  >Go To Profile</a
+> -->
+
+<!-- <button class="mt-5 ml-5 border px-3 py-1 rounded-md" (click)="goToProfile()">Go To Profile</button> -->
+
+<!-- <a routerLink="profile">Go To Profile</a> -->
+
+<h1 class="mt-5">User Details</h1>
+
+<div class="mt-5 flex flex-col">
+  @for (user of users; track user.id) {
+    <!-- <a routerLink=`/user/${user.id}`></a> -->
+    <!-- <p class="pl-3 mb-2">{{ user.name }}</p> -->
+    <a [routerLink]="['/user/{{ user.id }}', user]" class="pl-3 mb-2">{{ user.name }}</a>
+  }
+</div>

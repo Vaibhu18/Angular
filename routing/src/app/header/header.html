@@ -1,0 +1,11 @@
+<nav class="flex justify-between items-center px-10 py-5 shadow-md">
+  <div>
+    <h1 class="text-2xl font-medium">Angular Routting</h1>
+  </div>
+  <div class="flex flex-row gap-8 text-lg">
+    <a routerLink="/" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active">Home</a>
+    <a routerLink="/about" routerLinkActive="active">About</a>
+    <a routerLink="/contact" routerLinkActive="active">Contact</a>
+    <a routerLink="/documentation" routerLinkActive="active">DOC</a>
+  </div>
+</nav>
