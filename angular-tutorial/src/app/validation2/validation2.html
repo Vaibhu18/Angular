@@ -1,0 +1,42 @@
+<form [formGroup]="userData" (ngSubmit)="onSubmit()">
+  <div class="flex flex-col gap-1 mb-3">
+    <label for="">First Name</label>
+    <input type="text" formControlName="firstName" class="border pl-2 py-1" />
+    <p class="text-red-500">
+      {{ getErrors(f.firstName, 'First Name') }}
+    </p>
+  </div>
+
+  <div class="flex flex-col gap-1 mb-3">
+    <label for="">Last Name</label>
+    <input type="text" formControlName="lastName" class="border pl-2 py-1" />
+    <p class="text-red-500">
+      {{ getErrors(f.lastName, 'Last Name') }}
+    </p>
+  </div>
+
+  <div class="flex flex-col gap-1 mb-3">
+    <label for="">Email</label>
+    <input type="text" formControlName="email" class="border pl-2 py-1" />
+    <p class="text-red-500">
+      {{ getErrors(f.email, 'Email') }}
+    </p>
+  </div>
+
+  <div class="flex flex-col gap-1 mb-3">
+    <label for="">Mobile</label>
+    <input type="text" formControlName="mobile" class="border pl-2 py-1" />
+    <p class="text-red-500">
+      {{ getErrors(f.mobile, 'Mobile') }}
+    </p>
+  </div>
+
+  @if (successMessage) {
+    <p class="mb-3">
+      {{ successMessage }}
+    </p>
+  }
+  <button [disabled]="loading" type="submit" class="border px-4 py-1">
+    {{ loading ? 'Validating...' : 'Validate' }}
+  </button>
+</form>

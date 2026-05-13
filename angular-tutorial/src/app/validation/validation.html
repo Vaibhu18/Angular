@@ -1,0 +1,90 @@
+<div class="w-full flex justify-center items-center mt-10">
+  <div class="w-md border">
+    <h1 class="p-5 text-xl font-medium text-center">Validation Form</h1>
+
+    <form [formGroup]="userData" (ngSubmit)="onSubmit()" class="p-5 flex flex-col gap-3">
+      <div class="flex flex-col gap-1">
+        <label for="">First Name</label>
+        <input
+          type="text"
+          formControlName="firstName"
+          class="border rounded-md pl-2 py-1"
+          placeholder="enter your First Name"
+        />
+        @if (firstName?.touched && firstName?.invalid) {
+          @if (firstName?.errors?.['required']) {
+            <p class="text-xs text-red-500">first name is required</p>
+          } @else if (firstName?.errors?.['minlength']) {
+            <p class="text-xs text-red-500">first name at least 3 characters</p>
+          } @else if (firstName?.errors?.['maxlength']) {
+            <p class="text-xs text-red-500">first name not exceed 10 characters</p>
+          } @else if (firstName?.errors?.['pattern']) {
+            <p class="text-xs text-red-500">invalid first name</p>
+          }
+        }
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <label for="">Last Name</label>
+        <input
+          type="text"
+          formControlName="lastName"
+          class="border rounded-md pl-2 py-1"
+          placeholder="enter your Last Name"
+        />
+        @if (lastName?.touched && lastName?.invalid) {
+          @if (lastName?.errors?.['required']) {
+            <p class="text-xs text-red-500">last name is required</p>
+          } @else if (lastName?.errors?.['minlength']) {
+            <p class="text-xs text-red-500">last name at least 3 characters</p>
+          } @else if (lastName?.errors?.['maxlength']) {
+            <p class="text-xs text-red-500">last name not exceed 10 characters</p>
+          } @else if (lastName?.errors?.['pattern']) {
+            <p class="text-xs text-red-500">invalid last name</p>
+          }
+        }
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <label for="">Mobile Number</label>
+        <input
+          type="text"
+          formControlName="mobile"
+          class="border rounded-md pl-2 py-1"
+          placeholder="enter your mobile number"
+        />
+        @if (mobile?.touched && mobile?.invalid) {
+          @if (mobile?.errors?.['required']) {
+            <p class="text-xs text-red-500">mobile number is required</p>
+          } @else if (mobile?.errors?.['pattern']) {
+            <p class="text-xs text-red-500">invalid mobile number</p>
+          }
+        }
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <label for="">Email Address</label>
+        <input
+          type="email"
+          formControlName="email"
+          class="border rounded-md pl-2 py-1"
+          placeholder="enter your email address"
+        />
+        @if (email?.touched && email?.invalid) {
+          @if (email?.errors?.['required']) {
+            <p class="text-xs text-red-500">email is required</p>
+          } @else if (email?.errors?.['email']) {
+            <p class="text-xs text-red-500">invalid email address</p>
+          }
+        }
+      </div>
+
+      <button
+        type="submit"
+        class="border py-2 mt-3 rounded-md bg-red-300 hover:bg-red-500 text-white cursor-pointer"
+      >
+        Validate Data
+      </button>
+    </form>
+  </div>
+</div>

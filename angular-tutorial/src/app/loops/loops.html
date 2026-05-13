@@ -1,0 +1,16 @@
+<!-- @for (language of languages; track $index) {
+  <div>
+    <h3>{{ language }}</h3>
+    <button (click)="handleDelete($index)">Delete</button>
+  </div>
+} -->
+
+@if (numbers.length > 0) {
+  @for (num of numbers; track $index) {
+    @if (num % 2 == 0) {
+      <p>{{ num }} is even number</p>
+    }
+  }
+} @else {
+  <p>List is empty</p>
+}

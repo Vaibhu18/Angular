@@ -1,0 +1,43 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <input
+      type="text"
+      formControlName="firstName"
+      class="border pl-2 py-1 mb-1 rounded-md"
+      placeholder="enter your first name"
+    />
+    <p>{{ getError('firstName') }}</p>
+  </div>
+
+  <div>
+    <input
+      type="text"
+      formControlName="lastName"
+      class="border pl-2 py-1 mb-1 rounded-md"
+      placeholder="enter your last name"
+    />
+    <p>{{ getError('lastName') }}</p>
+  </div>
+
+  <div>
+    <input
+      type="text"
+      formControlName="email"
+      class="border pl-2 py-1 mb-1 rounded-md"
+      placeholder="enter your email"
+    />
+    <p>{{ getError('email') }}</p>
+  </div>
+
+  <div>
+    <input
+      type="text"
+      formControlName="mobile"
+      class="border pl-2 py-1 mb-1 rounded-md"
+      placeholder="enter your mobile number"
+    />
+    <p>{{ getError('mobile') }}</p>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>

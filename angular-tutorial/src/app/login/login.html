@@ -1,0 +1,4 @@
+<input #name type="text" placeholder="Enter your name" /><br />
+<input #email type="text" placeholder="Enter your email" /><br />
+<input #city type="text" placeholder="Enter your city" /><br />
+<button (click)="handleSubmit(name.value, email.value, city.value)">Submit</button>
