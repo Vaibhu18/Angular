@@ -1,0 +1,13 @@
+<nav class="d-flex justify-content-between align-items-center px-5 py-2 border">
+  <h4 class="text-danger">Routing</h4>
+  <div class="d-flex gap-5">
+    <a
+      *ngFor="let nav of navLinks"
+      [routerLink]="nav.path"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="text-decoration-none fw-medium text-white"
+      >{{ nav.title }}</a
+    >
+  </div>
+</nav>

@@ -1,0 +1,36 @@
+<div class="d-flex">
+  <!-- Sidebar -->
+  <div class="sidebar bg-dark text-white">
+    <div class="p-3">
+      <h5 class="mb-4">My Dashboard</h5>
+
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2" *ngFor="let item of menuItems">
+          <a
+            class="nav-link text-white d-flex align-items-center gap-2"
+            [routerLink]="item.route"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <i class="bi" [ngClass]="item.icon"></i>
+            <span>{{ item.label }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="flex-grow-1">
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-light px-3 shadow-sm">
+      <span class="navbar-brand mb-0 h6">Dashboard</span>
+      <button class="btn btn-outline-dark btn-sm">Profile</button>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="p-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
