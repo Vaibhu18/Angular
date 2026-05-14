@@ -9,6 +9,7 @@ import { Validation } from './validation/validation';
 import { Validation2 } from './validation2/validation2';
 import { Effect } from './effect/effect';
 import { Validation3 } from './validation3/validation3';
+import { Table } from './table/table';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,7 @@ import { Validation3 } from './validation3/validation3';
     Validation2,
     Effect,
     Validation3,
+    Table,
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',

@@ -1,0 +1,23 @@
+<p>table works!</p>
+
+<div class="mt-5 ml-5 flex flex-col gap-2">
+  <table class="table-auto w-full border-collapse">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td class="border px-4 py-2 text-center">{{ user['id'] }}</td>
+        <td class="border px-4 py-2 text-center">{{ user['name'] }}</td>
+        <td class="border px-4 py-2 text-center">{{ user['email'] }}</td>
+        <td class="border px-4 py-2 text-center">{{ user['role'] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
